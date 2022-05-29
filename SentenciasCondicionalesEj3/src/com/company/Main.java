@@ -11,6 +11,10 @@ public class Main {
 	promedio entre 6 y 8 aprobado, 1 y 5 desaprobado, 9 y 10 promocionado
 	 */
 
+        academicSituation();
+    }
+
+    private static void academicSituation() {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Ingrese el nombre del cursante");
         String nombre = myScanner.nextLine();
@@ -27,9 +31,9 @@ public class Main {
         } else if (promedio>=6 && promedio<=8) {
             System.out.println("Nombre: " + nombre + " Promedio: " + promedio + " Estado: Aprobado" );
         } else if (promedio>=9 && promedio<=10) {
-            System.out.println("Nombre: " + nombre + " Promedio: " + promedio + " Estado: Promocionado");
+            System.out.println("Nombre: " + nombre +" Promedio: " + promedio + " Estado: Promocionado");
         }else{
             System.out.println("Por favor, verifique que las notas ingresadas se encuentren en el rango del 1 al 10");
-        };
-}
+        }
+    }
 }
