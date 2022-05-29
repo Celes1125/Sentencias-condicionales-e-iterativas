@@ -11,20 +11,27 @@ public class Main {
       1. contado, tiene 15% de dto 2. débito, mismo precio al ingresado 3. tarjeta, 10% de recargo.
       Por último, imprimir en consola el nombre del producto y el importe total*/
 
+        precioProducto();
+    }
+
+    private static void precioProducto() {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Por favor, ingrese el nombre de su producto");
         String producto = myScanner.nextLine();
         System.out.println("Por favor, ingrese el precio de su producto");
         int precio = myScanner.nextInt();
-        System.out.println("Por favor, ingrese 1 para pago de CONTADO, 2 si abona con TARJETA y 3 para pagar con DEBITO");
+        System.out.println("Por favor, seleccione la forma de pago");
+        System.out.println("1. CONTADO");
+        System.out.println("2. TARJETA");
+        System.out.println("3. DEBITO");
         int metodo = myScanner.nextInt();
 
         switch (metodo) {
             case 1:
-                System.out.println (producto + " $" + (precio-precio*0.15));
+                System.out.println (producto + " $" + (precio*0.85));
                 break;
             case 2:
-                System.out.println(producto + " $" + (precio+precio*0.1));
+                System.out.println(producto + " $" + (precio*1.1));
                 break;
             default:
                 System.out.println(producto +" $" + precio);
