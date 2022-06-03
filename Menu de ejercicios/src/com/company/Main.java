@@ -14,7 +14,10 @@ public class Main {
             System.out.println("4. Iterativas: foo");
             System.out.println("5. Iterativas: 1 al 10");
             System.out.println("6. Iterativas: triángulos y asteriscos");
-            System.out.println("7. Salir");
+            System.out.println("7. Extra 1");
+            System.out.println("8. Extra 2");
+            System.out.println("9. Extra 3");
+            System.out.println("10. Salir");
             System.out.println("Ingrese el número de la opción deseada:");
 
             option = scanner.nextInt();
@@ -38,11 +41,20 @@ public class Main {
                     case 6:
                         triangles();
                         break;
+                    case 7:
+                        esPrimo();
+                        break;
+                    case 8:
+                        mostarPrimos();
+                        break;
+                    case 9:
+                        matriz();
+                        break;
                     default:
                         System.out.println("Por favor, seleccione una opción válida");
 
             }
-        }while (option != 7);
+        }while (option != 10);
         System.out.println("Gracias por utilizar nuestros servicios jajaaj");
     }
     private static void guessLargerThan () {
@@ -221,7 +233,99 @@ public class Main {
             return;
         }
     }
+    private static void esPrimo() {
+        Scanner myScanner = new Scanner (System.in);
+        System.out.println("Escribe un número entero");
+        int numero = myScanner.nextInt();
+        int cantidadDedivisores = 0;
 
+        for (int i = 1; i <= numero ; i++) {
+            if (numero % i == 0) {
+                cantidadDedivisores++;
+            }
+        }
+
+        if (cantidadDedivisores!=2){
+            System.out.println("Es compuesto");
+        }else{
+            System.out.println("Es primo");
+        }
+        System.out.println("¿Quieres jugar de nuevo?");
+        System.out.println("1. Seguir jugando");
+        System.out.println("2. Salir");
+        int answer = myScanner.nextInt();
+        if (answer==1){
+            esPrimo();
+        }else{
+            System.out.println("Gracias por Jugar!");
+            System.out.println("");
+            System.out.println("");
+            return;
+
+        }
+
+    }
+    private static void mostarPrimos () {
+        Scanner myScanner = new Scanner(System.in);
+        System.out.println("Escribe un número entero y en pantalla se mostrarán todos los números primos que le preceden");
+        int numberIn = myScanner.nextInt(); //10
+
+        for (int number = 1; number <= numberIn; number++) {//va probando desde el uno al número dado 1
+            int cantidadDedivisores = 0;
+            for (int divisor = 1; divisor <= number; divisor++) {//probando si cada uno es primo
+                if (number % divisor == 0) {
+                    cantidadDedivisores++;
+                }
+            }
+            if (cantidadDedivisores == 2) {
+                System.out.println(number);
+            }
+        }
+
+        System.out.println("¿Quieres jugar de nuevo?");
+        System.out.println("1. Seguir jugando");
+        System.out.println("2. Salir");
+        int answer = myScanner.nextInt();
+        if (answer == 1) {
+            mostarPrimos();
+        } else {
+            System.out.println("Gracias por Jugar!");
+            System.out.println("");
+            System.out.println("");
+            return;
+
+        }
+    }
+    private static void matriz () {
+        int[] numberList1 = {1, 2, 3};
+        int[] numberList2 = {4, 5, 6};
+        int[] numberList3 = {7, 8, 9};
+        int[][] numberList = {numberList1, numberList2, numberList3};
+
+        for (int i = 0; i < 3; i++) {
+            int suma = 0;
+            for (int j = 0; j < 3; j++) {
+                suma += numberList[i][j];
+            }
+
+            System.out.println("La suma de todos los elementos es: ");
+            System.out.println(suma);
+
+        }
+        System.out.println("¿Quieres jugar de nuevo?");
+        System.out.println("1. Seguir jugando");
+        System.out.println("2. Salir");
+        int answer = scanner.nextInt();
+        if (answer == 1) {
+            matriz();
+        } else {
+            System.out.println("Gracias por Jugar!");
+            System.out.println("");
+            System.out.println("");
+            return;
+
+        }
+    }
 
 }
 
