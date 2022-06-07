@@ -308,7 +308,8 @@ public class Main {
                 suma += numberList[i][j];
             }
 
-            System.out.println("La suma de todos los elementos es: ");
+            System.out.println("La suma de todos los valores de los tres arrays es: ");
+
             System.out.println(suma);
 
         }
