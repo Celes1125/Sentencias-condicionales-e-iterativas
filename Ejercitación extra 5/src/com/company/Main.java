@@ -20,7 +20,7 @@ public class Main {
         double [] currencyValues = {206, 44.02, 223.84*1.23};
         String [] currencyNames = {"dolares", "reales", "euros"};
         double convertedAmount = pesosAmount / currencyValues[currency];
-        convertedAmount = Math.round(convertedAmount);
+        convertedAmount = Math.round(convertedAmount * 100.0) /100.0;
         String currencyName = currencyNames [currency];
         System.out.println("El valor de "+ pesosAmount + " pesos argentinos es igual a "+ convertedAmount + " "+ currencyName);
     }
